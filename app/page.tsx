@@ -12,9 +12,7 @@ export default function Page() {
     issueDate: "06/04/2026",
     signer: "ASHOK KHANDELWAL",
     signDate: "2026.04.06 14:12:42 IST",
-    
-    // Add this line below to fix the error
-    imageUrl: "https://certificate-flax-chi.vercel.app/certificate.jpeg" 
+    imageUrl: "https://bit.ly/4lqJ1oS" 
   };
 
   return <Certificate data={studentData} />;
