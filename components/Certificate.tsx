@@ -1,9 +1,7 @@
 "use client";
 import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import Link from 'next/link';
 
-// Define the shape of the data
 interface CertificateData {
   serialNo: string;
   enrollNo: string;
@@ -15,6 +13,7 @@ interface CertificateData {
   issueDate: string;
   signer: string;
   signDate: string;
+  imageUrl: string; // Added field for the hosted image link
 }
 
 interface CertificateProps {
@@ -25,28 +24,9 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
   return (
     <div className="flex flex-col items-center py-10 px-4 bg-gray-100 min-h-screen font-serif">
       
-      {/* Print Button */}
-      <button 
-       
-        className="no-print mb-8 bg-amber-700 hover:bg-amber-800 text-white px-8 py-3 rounded-lg shadow-lg font-bold transition-all"
-      >
-      <Link href={"./certificate.jpeg"}>
-
-        Download as PDF / Print
-      </Link>
-
-
-
-
-
-      </button>
-
       {/* Main Certificate Card */}
       <div id="certificate-frame" className="relative bg-[#fdfaf3] w-full max-w-[850px] border-[12px] border-double border-[#b8975a] p-6 md:p-12 shadow-2xl text-center overflow-hidden">
         
-        {/* Visual guide to certificate layout structure */}
-        
-
         {/* Watermark */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none">
           <img 
@@ -97,9 +77,10 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
         <div className="relative z-10 mt-12 md:mt-20 flex flex-col md:flex-row justify-between items-center md:items-end gap-10">
           <div className="flex flex-col items-center">
             <div className="p-2 bg-white border border-gray-200 shadow-sm">
-                <QRCodeSVG value={typeof window !== 'undefined' ? window.location.href : ''} size={80} />
+                {/* QR points directly to the hosted image URL */}
+                <QRCodeSVG value={data.imageUrl} size={80} level="H" />
             </div>
-            <p className="text-[9px] mt-2 font-bold text-gray-500 uppercase">Verify Record</p>
+            <p className="text-[9px] mt-2 font-bold text-gray-500 uppercase">Scan to View Document</p>
           </div>
 
           <div className="text-sm md:text-base font-medium order-last md:order-none pb-2">

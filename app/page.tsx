@@ -11,7 +11,10 @@ export default function Page() {
     examDate: "APRIL-2025",
     issueDate: "06/04/2026",
     signer: "ASHOK KHANDELWAL",
-    signDate: "2026.04.06 14:12:42 IST"
+    signDate: "2026.04.06 14:12:42 IST",
+    
+    // Add this line below to fix the error
+    imageUrl: "https://certificate-flax-chi.vercel.app/certificate.jpeg" 
   };
 
   return <Certificate data={studentData} />;
