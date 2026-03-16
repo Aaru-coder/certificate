@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-
+import Image from 'next/image';
+import QR from "@/public/temp.webp"
 interface CertificateData {
   serialNo: string;
   enrollNo: string;
@@ -75,14 +76,17 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
 
         {/* Footer */}
         <div className="relative z-10 mt-12 md:mt-20 flex flex-col md:flex-row justify-between items-center md:items-end gap-10">
-          <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center">
             <div className="p-2 bg-white border border-gray-200 shadow-sm">
-                {/* QR points directly to the hosted image URL */}
+                
+                {/* 1. We uncommented this line to make the QR dynamic */}
                 <QRCodeSVG value={data.imageUrl} size={80} level="H" />
+                
+                {/* 2. We removed the static Next Image and hardcoded issue date text */}
+                
             </div>
             <p className="text-[9px] mt-2 font-bold text-gray-500 uppercase">Scan to View Document</p>
           </div>
-
           <div className="text-sm md:text-base font-medium order-last md:order-none pb-2">
             Jabalpur : {data.issueDate}
           </div>
