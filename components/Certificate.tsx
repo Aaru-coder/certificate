@@ -24,15 +24,15 @@ interface CertificateProps {
 const Certificate: React.FC<CertificateProps> = ({ data }) => {
   return (
     <div className="flex flex-col items-center py-10 px-4 bg-gray-100 min-h-screen font-serif">
-      
+
       {/* Main Certificate Card */}
       <div id="certificate-frame" className="relative bg-[#fdfaf3] w-full max-w-[850px] border-[12px] border-double border-[#b8975a] p-6 md:p-12 shadow-2xl text-center overflow-hidden">
-        
+
         {/* Watermark */}
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none">
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/en/a/a5/Madhya_Pradesh_Medical_Science_University_logo.png" 
-            alt="watermark" 
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/a/a5/Madhya_Pradesh_Medical_Science_University_logo.png"
+            alt="watermark"
             className="w-3/4"
           />
         </div>
@@ -48,9 +48,9 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
 
         {/* Branding */}
         <div className="relative z-10 mb-8">
-          <img 
-            src="https://upload.wikimedia.org/wikipedia/en/a/a5/Madhya_Pradesh_Medical_Science_University_logo.png" 
-            alt="University Logo" 
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/a/a5/Madhya_Pradesh_Medical_Science_University_logo.png"
+            alt="University Logo"
             className="w-24 md:w-32 mx-auto mb-4"
           />
           <h1 className="font-serif font-bold text-xl md:text-3xl text-gray-900 tracking-tight leading-snug px-4">
@@ -76,24 +76,25 @@ const Certificate: React.FC<CertificateProps> = ({ data }) => {
 
         {/* Footer */}
         <div className="relative z-10 mt-12 md:mt-20 flex flex-col md:flex-row justify-between items-center md:items-end gap-10">
-  <div className="flex flex-col items-center">
-            <div className="p-2 bg-white border border-gray-200 shadow-sm">
-                
-                {/* 1. We uncommented this line to make the QR dynamic */}
-                <QRCodeSVG value={data.imageUrl} size={80} level="H" />
-                
-                {/* 2. We removed the static Next Image and hardcoded issue date text */}
-                
-            </div>
-            <p className="text-[9px] mt-2 font-bold text-gray-500 uppercase">Scan to View Document</p>
-          </div>
-          <div className="text-sm md:text-base font-medium order-last md:order-none pb-2">
+          <div className="flex flex-col items-center">
+            <div className="text-sm md:text-base text-black font-medium order-last md:order-none pb-2">
             Jabalpur : {data.issueDate}
           </div>
+         
+          </div>
+          
+   <div className="p-2 bg-white border border-gray-200 shadow-sm">
+              <QRCodeSVG
+                value={data.imageUrl}
+                size={100} // Increased size slightly for better visibility
+                level="H"  // High error correction is REQUIRED when using center logos
 
+              />
+            </div>
+          
           <div className="text-[10px] md:text-[11px] text-center min-w-[220px]">
             <div className="mb-2">
-                <span className="text-green-700 font-bold border-2 border-green-700 px-3 py-1 rounded-sm -rotate-2 inline-block">✓ Signature Valid</span>
+              <span className="text-green-700 font-bold border-2 border-green-700 px-3 py-1 rounded-sm -rotate-2 inline-block">✓ Signature Valid</span>
             </div>
             <div className="text-gray-700 font-semibold">Digitally signed by {data.signer}</div>
             <div className="font-bold text-black mt-3 border-t pt-1 uppercase">Vice Chancellor</div>
