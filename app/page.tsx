@@ -12,7 +12,7 @@ export default function Page() {
     issueDate: "06/04/2026",
     signer: "ASHOK KHANDELWAL",
     signDate: "2026.04.06 14:12:42 IST",
-    imageUrl: "https://res.cloudinary.com/dpjwd6oae/image/upload/v1773659355/certificate_1_uekjwn.jpg" 
+    imageUrl: "https://res.cloudinary.com/dpjwd6oae/image/upload/v1773661888/certificate_2_a21j38.jpg" 
   };
 
   return <Certificate data={studentData} />;
