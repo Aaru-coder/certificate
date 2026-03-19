@@ -12,7 +12,8 @@ export default function Page() {
     issueDate: "06/04/2026",
     signer: "ASHOK KHANDELWAL",
     signDate: "2026.04.06 14:12:42 IST",
-    imageUrl: "" 
+    imageUrl: "https://www.mpmsumed.in/" 
+    
   };
 
   return <Certificate data={studentData} />;
