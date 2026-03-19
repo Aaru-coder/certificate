@@ -12,7 +12,7 @@ export default function Page() {
     issueDate: "06/04/2026",
     signer: "ASHOK KHANDELWAL",
     signDate: "2026.04.06 14:12:42 IST",
-    imageUrl: "https://www.mpmsumed.in/" 
+    imageUrl: "https://www.mpmsumed.in/HP027H00019018.pdf" 
     
   };
 

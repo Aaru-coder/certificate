@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "certificate ",
-  description: "certificate",
+  title: "MPMSU Result ",
+  description: "MPMSU Result / certificate",
 };
 
 export default function RootLayout({
